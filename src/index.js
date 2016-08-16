@@ -13,8 +13,8 @@ let TabExample = React.createClass({
 		
             <div>
                 <Tabs type="tabbar" defaultActiveKey="1">
-				  <TabPane tab={<span><Icon type="home" key="1" />SUMMARY</span>}>
-				  <Collapse defaultActiveKey="0">
+				  <TabPane tab={<span><Icon type="home"/>SUMMARY</span>} key="1">
+				  <Collapse defaultActiveKey="-1" accordion="true">
 					  <Collapse.Panel header="新增任务汇总 (1200/1500)">
 						<List.Item>二次激活  10</List.Item>
 						<List.Item>三次激活  20</List.Item>
@@ -26,6 +26,24 @@ let TabExample = React.createClass({
 						<List.Item>三次激活  20</List.Item>
 						<List.Item>四次激活  30</List.Item>
 						<List.Item>五次激活  40</List.Item>
+					  </Collapse.Panel>
+					  <Collapse.Panel header="job状态 (6)">
+						<List.Item>
+							<Flex>
+								<Flex.Item>
+								  <span>job-01 (0)</span>
+								</Flex.Item>
+								<Flex.Item>
+								  <Button type="primary">go</Button>
+								</Flex.Item>
+								<Flex.Item>
+								  <Button type="primary">hold</Button>
+								</Flex.Item>
+								<Flex.Item>
+								  <Button type="primary">freeze</Button>
+								</Flex.Item>
+							</Flex>
+						</List.Item>
 					  </Collapse.Panel>
 					  <Collapse.Panel header="slaver状态 (2/6)">
 						<List.Item>
@@ -41,10 +59,8 @@ let TabExample = React.createClass({
 								</Flex.Item>
 							</Flex>
 						</List.Item>
-						
 					  </Collapse.Panel>
-					  <List>
-					  </List>
+					  
 				  </Collapse>
 				  </TabPane>
 				  <TabPane tab={<span><Icon type="team" />JOBS</span>} key="2">选项好友内容</TabPane>
